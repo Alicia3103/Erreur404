@@ -1,0 +1,144 @@
+@import url("https://fonts.googleapis.com/css2?family=Gorditas:wght@400;700&display=swap");
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/*==================== GOOGLE FONTS ====================*/
+/*==================== BASE ====================*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Gorditas", cursive;
+}
+
+h1, h2, h3, h4 {
+  font-weight: bold;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+main {
+  height: 100vh;
+}
+
+.box_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 240px;
+  position: relative;
+  justify-content: end;
+  margin-top: 150px;
+}
+.box_container:hover .top_and_cat_container {
+  top: -118px;
+}
+
+.top_and_cat_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  transition: top 0.6s;
+}
+.top_and_cat_container .top {
+  z-index: 1;
+}
+.top_and_cat_container .top .top_box {
+  max-width: 100%;
+  height: 70px;
+}
+
+.bottom_container {
+  z-index: 1;
+}
+
+.bottom_box {
+  height: 165px;
+}
+
+.cat_container {
+  height: 120px;
+}
+.cat_container img {
+  height: 100%;
+}
+
+.find_cat_game {
+  display: flex;
+}
+
+#game_result {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.section__top {
+  height: 45%;
+}/*# sourceMappingURL=main.css.map */
