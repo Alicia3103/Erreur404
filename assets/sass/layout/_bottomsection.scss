@@ -1,0 +1,142 @@
+.section__bottom {
+	display: flex;
+	flex-direction: column;
+	height: 55%;
+	justify-content: space-evenly;
+    background-image: url(../../../Public/img/fond_strip_vert.jpg);
+    background-size: cover;
+background-repeat: no-repeat;
+
+	.boxes__container {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-evenly;
+        height: 140px;
+		
+
+	}
+    .line_1{
+        margin-bottom: -30px;
+    }
+    .line_2{
+        justify-content: space-between;
+        margin-bottom: -30px;
+    }
+}
+.cat__box__container {
+
+	width: 15%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+	height: 140px;
+	.top__and__cat__container {
+		width: 100%;
+
+	    position: relative;
+	
+        .enveloppe{
+            position: absolute;
+            top:0px;
+            width: 100%;
+            transition:top .6s;
+    }
+		.top__container {
+			width: 100%;
+			height: 60px;
+		background-color: red;
+
+            z-index: 2;
+		}
+		.cat__container {
+			width: 100%;
+			height: 60px;
+			
+		}
+	}
+	.bottom__container {
+		width: 100%;
+		height: 80px;
+	
+        z-index: 1;
+        justify-self: flex-end;	
+	}
+    &:hover {
+		.enveloppe{
+			top: -70px;
+		}
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*.section__bottom {
+	display: flex;
+	flex-direction: column;
+	height: 55%;
+	justify-content: space-evenly;
+
+	.boxes__container {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-evenly;
+		height: 100%;
+		background-color: aqua;
+	}
+}
+.cat__box__container {
+	background-color: black;
+	width: 15%;
+    display: flex;
+	position: relative;
+	.top__and__cat__container {
+		width: 100%;
+		height: 60px;
+		background-color: greenyellow;
+		position: absolute;
+		bottom: 40px;
+        align-self: start;
+        transition:bottom .6s;
+
+		.top__container {
+			width: 100%;
+			height: 20px;
+			background-color: pink;
+		}
+		.cat__container {
+			width: 100%;
+			height: 40px;
+			background-color: blueviolet;
+		}
+	}
+	.bottom__container {
+		width: 100%;
+		height: 80px;
+		background-color: yellow;
+        align-self:flex-end;
+        z-index: 1;
+		
+	}
+	&:hover {
+		.top__and__cat__container {
+			bottom: 80px;
+		}
+	}
+}*/

@@ -78,67 +78,243 @@ a {
 }
 
 img {
-  max-width: 100%;
-  height: auto;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 main {
   height: 100vh;
+  width: 100vw;
 }
 
-.box_container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 240px;
-  position: relative;
-  justify-content: end;
-  margin-top: 150px;
-}
-.box_container:hover .top_and_cat_container {
-  top: -118px;
-}
-
-.top_and_cat_container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: absolute;
-  top: 0;
-  transition: top 0.6s;
-}
-.top_and_cat_container .top {
-  z-index: 1;
-}
-.top_and_cat_container .top .top_box {
-  max-width: 100%;
-  height: 70px;
-}
-
-.bottom_container {
-  z-index: 1;
-}
-
-.bottom_box {
-  height: 165px;
-}
-
-.cat_container {
-  height: 120px;
-}
-.cat_container img {
-  height: 100%;
-}
-
-.find_cat_game {
-  display: flex;
+img {
+  max-height: 100%;
+  object-fit: contain;
 }
 
 #game_result {
   font-size: 22px;
   font-weight: bold;
+  position: absolute;
+  bottom: -100px;
 }
 
 .section__top {
   height: 45%;
-}/*# sourceMappingURL=main.css.map */
+  min-width: 100%;
+  display: flex;
+  background-image: url(../../../Public/img/fond_pois_bleu.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.section__jeux,
+.section__titre {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-grow: 1;
+  min-width: 30%;
+}
+
+.section__jeux {
+  justify-content: space-evenly;
+}
+
+.titre__container {
+  width: 70%;
+  align-self: center;
+  text-align: center;
+}
+.titre__container h1 {
+  font-size: 32px;
+  padding: 15px 0;
+}
+.titre__container p {
+  font-size: 20px;
+}
+
+.question__container {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 400px;
+  width: 80%;
+}
+
+.question__content {
+  background-color: white;
+  box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.6);
+  border-radius: 24px;
+  width: 100%;
+  height: 150px;
+  padding: 2px;
+}
+.question__content .question__content-text {
+  display: flex;
+  border-radius: 24px;
+  width: 100%;
+  height: 100%;
+  border: dashed 2px green;
+  padding: 15px;
+}
+.question__content .question__content-text p {
+  margin-top: auto;
+  margin-bottom: auto;
+  text-align: center;
+}
+
+.reponses__container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.reponse__content {
+  background-color: white;
+  box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.6);
+  border-radius: 24px;
+  width: 30%;
+  padding: 2px;
+}
+.reponse__content .reponse__content-text {
+  display: flex;
+  border-radius: 24px;
+  width: 100%;
+  height: 100%;
+  padding: 15px;
+}
+.reponse__content .reponse__content-text p {
+  margin-top: auto;
+  margin-bottom: auto;
+  text-align: center;
+}
+.reponse__content .reponse_1 {
+  border: dashed 2px pink;
+}
+.reponse__content .reponse_1 img {
+  width: 100%;
+  height: 100%;
+}
+.reponse__content .reponse_2 {
+  border: dashed 2px blue;
+}
+
+.hidden {
+  visibility: collapse;
+}
+
+.section__bottom {
+  display: flex;
+  flex-direction: column;
+  height: 55%;
+  justify-content: space-evenly;
+  background-image: url(../../../Public/img/fond_strip_vert.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.section__bottom .boxes__container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  height: 140px;
+}
+.section__bottom .line_1 {
+  margin-bottom: -30px;
+}
+.section__bottom .line_2 {
+  justify-content: space-between;
+  margin-bottom: -30px;
+}
+
+.cat__box__container {
+  width: 15%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 140px;
+}
+.cat__box__container .top__and__cat__container {
+  width: 100%;
+  position: relative;
+}
+.cat__box__container .top__and__cat__container .enveloppe {
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  transition: top 0.6s;
+}
+.cat__box__container .top__and__cat__container .top__container {
+  width: 100%;
+  height: 60px;
+  background-color: red;
+  z-index: 2;
+}
+.cat__box__container .top__and__cat__container .cat__container {
+  width: 100%;
+  height: 60px;
+}
+.cat__box__container .bottom__container {
+  width: 100%;
+  height: 80px;
+  z-index: 1;
+  justify-self: flex-end;
+}
+.cat__box__container:hover .enveloppe {
+  top: -70px;
+}
+
+/*.section__bottom {
+	display: flex;
+	flex-direction: column;
+	height: 55%;
+	justify-content: space-evenly;
+
+	.boxes__container {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-evenly;
+		height: 100%;
+		background-color: aqua;
+	}
+}
+.cat__box__container {
+	background-color: black;
+	width: 15%;
+    display: flex;
+	position: relative;
+	.top__and__cat__container {
+		width: 100%;
+		height: 60px;
+		background-color: greenyellow;
+		position: absolute;
+		bottom: 40px;
+        align-self: start;
+        transition:bottom .6s;
+
+		.top__container {
+			width: 100%;
+			height: 20px;
+			background-color: pink;
+		}
+		.cat__container {
+			width: 100%;
+			height: 40px;
+			background-color: blueviolet;
+		}
+	}
+	.bottom__container {
+		width: 100%;
+		height: 80px;
+		background-color: yellow;
+        align-self:flex-end;
+        z-index: 1;
+
+	}
+	&:hover {
+		.top__and__cat__container {
+			bottom: 80px;
+		}
+	}
+}*//*# sourceMappingURL=main.css.map */
