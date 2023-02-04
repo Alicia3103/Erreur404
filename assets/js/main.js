@@ -55,10 +55,17 @@ function attributeCat(array) {
 	}
 	const randomCat = randomNumber(0, catContainers.length)
 
-	const startGame = document.getElementById('start_game')
+	const startGame = document.getElementById('start_game');
+	const oldCat=document.getElementById('oldCat');
+console.log(oldCat)
+	
 	startGame.addEventListener('click', (e) => {
 		searchedCat(shuffledArray, randomCat, catContainers)
 	})
+	if (oldCat){
+		
+		newSearchedCat(shuffledArray, randomCat, catContainers)
+	}
 }
 
 //Affichage de la tête de chat à chercher
@@ -66,8 +73,24 @@ async function searchedCat(shuffledArray, randomCat, catContainers) {
 	const searchCat = await shuffledArray[randomCat]
 
 	const findCat = document.createElement('IMG')
+	findCat.setAttribute('id','newCat')
 	findCat.src = searchCat
 	const oldP = document.getElementById('reponse_1-p')
+	if(oldP){
+	document.getElementById('reponse_1-parent').replaceChild(findCat, oldP)	
+	}
+	
+	findTheCat(catContainers, searchCat)
+}
+
+//Affichage de la tête de chat à chercher
+async function newSearchedCat(shuffledArray, randomCat, catContainers) {
+	const searchCat = await shuffledArray[randomCat]
+
+	const findCat = document.createElement('IMG')
+	findCat.setAttribute('id','newCat')
+	findCat.src = searchCat
+	const oldP = document.getElementById('oldCat')
 	document.getElementById('reponse_1-parent').replaceChild(findCat, oldP)
 
 	findTheCat(catContainers, searchCat)
@@ -83,6 +106,15 @@ function findTheCat(catContainers, searchCat) {
 				console.log('yeaah')
 				gameResult.style.color = 'green'
 				gameResult.innerText = 'Vous avez gagné'
+				gameResult.innerHTML=`
+				<div class="result__container"> <div class="result__content">
+				<p>Félicitations Vous avez gagné</p>
+				<p>Voulez-vous <span id="new__game">rejouer</span></p>
+				</div></div>`
+				gameResult.style.zIndex = "10"
+				gameResult.style.transform='translateY(-420px)';
+				gameResult.style.transition=" all 1s" 
+				newGame(array,gameResult)
 			} 
 		})
 	})
@@ -92,3 +124,22 @@ attributeCat(array);
 
 
 
+ function newGame(array, gameResult){
+	const newGameSpan= document.getElementById('new__game')
+	
+	newGameSpan.addEventListener('click',(e)=>{
+		
+		gameResult.style.zIndex = "-10"
+		console.log('rejouer')
+		oldCat=document.getElementById('newCat')
+		oldCat.setAttribute('id','oldCat')
+		attributeCat(array);
+
+		//penser a clean gameResult
+		
+		gameResult.innerText = ''
+				gameResult.innerHTML=``
+			
+
+	})
+}
