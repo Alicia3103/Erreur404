@@ -7,7 +7,7 @@
     left:50%;
     margin-left: -200px;
     z-index: -10;
-    
+    color: #b05ad9;
 
 }
 .result__container{
@@ -27,8 +27,9 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        border: dashed 2px #9AEE8D;
+        border: dashed 2px #b05ad9;
         border-radius: 15px;
+        position: relative;
       
         span{
             text-decoration: underline;
@@ -36,6 +37,12 @@
         }
         p{
             padding:10px 0;
+        }
+        #close{
+            position: absolute;
+            top:5px;
+            right: 5px;
+            cursor: pointer;
         }
     }
 }
